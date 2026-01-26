@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Passive-Aggressive Duck",
+  "version": "1.0.0",
+  "description": "A rubber duck that judges your coding habits. Mute it when you need to focus.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "duck.png",
+      "48": "duck.png",
+      "128": "duck.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "config.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "duck.png"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "commands": {
+    "toggle-mute": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "Toggle duck mute on/off"
+    }
+  },
+  "icons": {
+    "16": "duck.png",
+    "48": "duck.png",
+    "128": "duck.png"
+  }
+}

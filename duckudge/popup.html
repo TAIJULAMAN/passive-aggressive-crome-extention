@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duckudge Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>🦆 Duckudge</h1>
+      <p class="subtitle">Passive-Aggressive Rubber Duck</p>
+    </div>
+
+    <!-- Mute Section (Prominent) -->
+    <div class="section mute-section">
+      <div class="section-header">
+        <h2>Focus Mode</h2>
+        <span class="status-badge" id="statusBadge">Active</span>
+      </div>
+      
+      <div class="toggle-container">
+        <label class="toggle-switch">
+          <input type="checkbox" id="muteToggle">
+          <span class="toggle-slider"></span>
+        </label>
+        <label for="muteToggle" class="toggle-label">
+          <span id="muteLabel">Mute Duck</span>
+        </label>
+      </div>
+
+      <!-- Quick Mute Options -->
+      <div class="quick-mute">
+        <button class="quick-btn" data-duration="3600000">Mute for 1 hour</button>
+        <button class="quick-btn" data-duration="86400000">Mute for today</button>
+      </div>
+
+      <!-- Keyboard Shortcut Info -->
+      <div class="shortcut-info">
+        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> to toggle
+      </div>
+    </div>
+
+    <!-- Custom Insults Section -->
+    <div class="section">
+      <h2>Custom Insults</h2>
+      <div class="insult-input-group">
+        <input 
+          type="text" 
+          id="customInsultInput" 
+          placeholder="Add your own passive-aggressive message..."
+          maxlength="150"
+        >
+        <button id="addInsultBtn" class="btn-primary">Add</button>
+      </div>
+      
+      <div id="customInsultsList" class="insults-list">
+        <!-- Custom insults will be added here -->
+      </div>
+    </div>
+
+    <!-- Sensitivity Section -->
+    <div class="section">
+      <h2>Sensitivity Level</h2>
+      <div class="slider-container">
+        <label class="slider-label">Passive</label>
+        <input 
+          type="range" 
+          id="sensitivitySlider" 
+          min="1" 
+          max="3" 
+          value="2" 
+          step="1"
+          class="slider"
+        >
+        <label class="slider-label">Aggressive</label>
+      </div>
+      <p class="slider-value" id="sensitivityValue">Balanced</p>
+    </div>
+
+    <!-- Data Management -->
+    <div class="section">
+      <h2>Data Management</h2>
+      <button id="resetVisitsBtn" class="btn-secondary">Reset Visit Tracking</button>
+      <button id="exportSettingsBtn" class="btn-secondary">Export Settings</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Version 1.0.0 | Made with 💛 and 😤</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
